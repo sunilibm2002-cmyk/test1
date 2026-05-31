@@ -3,116 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top 10 Tourist Places in India</title>
+  <title>Sunil's Welcome Page & India Travel Guide</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+    * {
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #333;
+      min-height: 100vh;
     }
-    header {
-      background: #0073e6;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 25px;
     }
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 20px 40px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-    section {
+    .hero {
+      display: grid;
+      gap: 30px;
+      align-items: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
       margin-bottom: 30px;
+      animation: fadeIn 0.8s ease-out;
     }
-    h2 {
-      color: #005bb5;
-      margin-top: 0;
+    .hero h1 {
+      font-size: clamp(2.7rem, 4vw, 4rem);
+      color: #2c3e8f;
     }
-    ul {
-      padding-left: 20px;
+    .hero .name {
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: #764ba2;
+      font-weight: 800;
+      margin-top: 10px;
     }
-    li {
-      margin-bottom: 15px;
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+      max-width: 700px;
     }
-    footer {
+    .hero .quote {
+      margin-top: 25px;
+      padding: 22px 24px;
+      background: #f0f4ff;
+      border-left: 5px solid #667eea;
+      border-radius: 12px;
+      color: #333;
+      font-style: italic;
+      line-height: 1.7;
+    }
+    .hero .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .hero .btn {
+      padding: 14px 32px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      font-weight: 700;
+    }
+    .hero .btn-primary {
+      background: #667eea;
+      color: white;
+      box-shadow: 0 12px 24px rgba(102, 126, 234, 0.24);
+    }
+    .hero .btn-secondary {
+      background: white;
+      color: #667eea;
+      border: 2px solid #667eea;
+    }
+    .hero .btn:hover {
+      transform: translateY(-3px);
+    }
+    .content {
+      display: grid;
+      gap: 25px;
+    }
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+    }
+    .card h2 {
+      color: #2c3e8f;
+      margin-bottom: 16px;
+      font-size: clamp(1.75rem, 2vw, 2.4rem);
+    }
+    .card p {
+      color: #4b5577;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .places-list {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      gap: 18px;
+    }
+    .place-item {
+      padding: 18px 22px;
+      border-radius: 14px;
+      background: #f8f9ff;
+      border: 1px solid #e1e7ff;
+    }
+    .place-item .place-title {
+      font-weight: 700;
+      color: #0f1c70;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+    .place-item p {
+      margin: 0;
+      color: #4b5577;
+    }
+    .footer {
+      margin-top: 35px;
       text-align: center;
-      padding: 15px;
-      background: #f0f0f0;
+      color: #e3e7ff;
+      font-size: 0.95rem;
     }
-    .place-title {
-      font-weight: bold;
-      margin-bottom: 5px;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 650px) {
+      .hero,
+      .card {
+        padding: 24px;
+      }
+      .hero .buttons {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Top 10 Tourist Places in India</h1>
-    <p>A beginner-friendly webpage with popular destinations and quick facts.</p>
-  </header>
-  <main>
-    <section>
-      <h2>Introduction</h2>
-      <p>India is a vast country with a rich mix of history, culture, nature, and architecture. Here are 10 famous tourist places that visitors often enjoy exploring.</p>
+  <div class="page-wrapper">
+    <section class="hero">
+      <div>
+        <h1>Welcome to Sunil's Personal Homepage</h1>
+        <div class="name">Hi, I'm Sunil</div>
+        <p>Welcome to your custom homepage. This page combines a friendly welcome message with a beginner-friendly guide to the top tourist destinations in India.</p>
+        <div class="quote">"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle." — Christian D. Larson</div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-primary" onclick="alert('Welcome to my website, Sunil!')">Say Hello</button>
+        <button class="btn btn-secondary" onclick="showTime()">Show Time</button>
+      </div>
     </section>
-    <section>
-      <h2>Top 10 Tourist Places</h2>
-      <ul>
-        <li>
-          <div class="place-title">1. Taj Mahal, Agra</div>
-          <p>The Taj Mahal is a beautiful white marble mausoleum built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal. It is one of the most famous monuments in the world.</p>
-        </li>
-        <li>
-          <div class="place-title">2. Jaipur, Rajasthan</div>
-          <p>Jaipur is known as the Pink City and is famous for its palaces, forts, and colorful markets. Popular sites include the Amber Fort, Hawa Mahal, and City Palace.</p>
-        </li>
-        <li>
-          <div class="place-title">3. Goa Beaches</div>
-          <p>Goa is famous for its sandy beaches, lively nightlife, and relaxed atmosphere. Popular beaches include Baga, Anjuna, and Palolem.</p>
-        </li>
-        <li>
-          <div class="place-title">4. Kerala Backwaters</div>
-          <p>The Kerala backwaters are a network of calm canals, rivers, and lakes. Visitors often enjoy houseboat rides, peaceful scenery, and local cuisine.</p>
-        </li>
-        <li>
-          <div class="place-title">5. Varanasi, Uttar Pradesh</div>
-          <p>Varanasi is a sacred city on the banks of the Ganges River. It is known for its ancient temples, spiritual rituals, and sunrise boat rides along the river.</p>
-        </li>
-        <li>
-          <div class="place-title">6. Ladakh, Jammu & Kashmir</div>
-          <p>Ladakh is a high-altitude region with dramatic landscapes, mountains, and lakes. It is popular for trekking, Buddhist monasteries, and scenic drives.</p>
-        </li>
-        <li>
-          <div class="place-title">7. Delhi</div>
-          <p>Delhi is the capital city with a mix of historic monuments and modern life. Major attractions include the Red Fort, Qutub Minar, India Gate, and Lotus Temple.</p>
-        </li>
-        <li>
-          <div class="place-title">8. Mumbai, Maharashtra</div>
-          <p>Mumbai is a bustling metropolis known for Bollywood, Gateway of India, Marine Drive, and vibrant street food. It is India's financial and entertainment capital.</p>
-        </li>
-        <li>
-          <div class="place-title">9. Udaipur, Rajasthan</div>
-          <p>Udaipur is known as the City of Lakes. It features beautiful palaces, lakes, and traditional Rajasthani architecture, including the City Palace and Lake Pichola.</p>
-        </li>
-        <li>
-          <div class="place-title">10. Mysore, Karnataka</div>
-          <p>Mysore is famous for its royal heritage, especially Mysore Palace. The city also hosts the colorful Dasara festival each year.</p>
-        </li>
-      </ul>
+
+    <section class="content">
+      <article class="card">
+        <h2>Top 10 Tourist Places in India</h2>
+        <p>India is a vast country with a rich mix of history, culture, natural beauty, and architecture. Here are 10 famous destinations that every traveler should know.</p>
+        <ul class="places-list">
+          <li class="place-item">
+            <div class="place-title">1. Taj Mahal, Agra</div>
+            <p>A stunning white marble mausoleum built by Mughal Emperor Shah Jahan in memory of Mumtaz Mahal. It is one of the world's most iconic landmarks.</p>
+          </li>
+          <li class="place-item">
+            <div class="place-title">2. Jaipur, Rajasthan</div>
+            <p>Known as the Pink City, Jaipur is famous for its palaces, forts, and vibrant streets. Visit Amber Fort, Hawa Mahal, and City Palace.</p>
+          </li>
+          <li class="place-item">
+            <div class="place-title">3. Goa Beaches</div>
+            <p>Popular for its sandy shores, relaxed vibe, and beachside markets. Top beaches include Baga, Anjuna, and Palolem.</p>
+          </li>
+          <li class="place-item">
+            <div class="place-title">4. Kerala Backwaters</div>
+            <p>A peaceful network of canals, lakes, and rivers where houseboat rides show the quiet beauty of southern India.</p>
+          </li>
+          <li class="place-item">
+            <div class="place-title">5. Varanasi, Uttar Pradesh</div>
+            <p>A sacred city along the Ganges River, known for ancient temples, spiritual rituals, and colorful morning river ceremonies.</p>
+          </li>
+          <li class="place-item">
+            <div class="place-title">6. Ladakh, Jammu & Kashmir</div>
+            <p>A high-altitude wonderland of mountains and lakes, ideal for trekking, Buddhist monasteries, and unforgettable landscapes.</p>
+          </li>
+          <li class="place-item">
+            <div class="place-title">7. Delhi</div>
+            <p>The capital city blends historic monuments and modern culture. Must-see spots include the Red Fort, Qutub Minar, and India Gate.</p>
+          </li>
+          <li class="place-item">
+            <div class="place-title">8. Mumbai, Maharashtra</div>
+            <p>India's financial and entertainment hub, known for the Gateway of India, Marine Drive, and vibrant street food.</p>
+          </li>
+          <li class="place-item">
+            <div class="place-title">9. Udaipur, Rajasthan</div>
+            <p>The City of Lakes, famous for romantic palaces, scenic water views, and the majestic City Palace complex.</p>
+          </li>
+          <li class="place-item">
+            <div class="place-title">10. Mysore, Karnataka</div>
+            <p>Known for its royal heritage, grand Mysore Palace, and the colorful Dasara festival celebrated each year.</p>
+          </li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Why This Page Works</h2>
+        <p>This single HTML page brings together a friendly personal introduction and a structured travel guide. It is a good example of how a beginner can build a webpage that is both welcoming and informative.</p>
+        <p>To customize it, you can change the text, add your own photo, or expand the travel list with more places.</p>
+      </article>
     </section>
-    <section>
-      <h2>How to Use This Page</h2>
-      <p>This page is a simple example of HTML structure for beginners. You can edit the text, change the headings, or add your own favorite places to learn how HTML works.</p>
-    </section>
-  </main>
-  <footer>
-    <p>Created as a beginner-friendly HTML page about India&apos;s top tourist attractions.</p>
-  </footer>
+
+    <div class="footer">Current time: <span id="currentTime"></span></div>
+  </div>
+
+  <script>
+    function showTime() {
+      const now = new Date();
+      alert('Current time: ' + now.toLocaleTimeString());
+    }
+    document.getElementById('currentTime').textContent = new Date().toLocaleTimeString();
+  </script>
 </body>
 </html>
